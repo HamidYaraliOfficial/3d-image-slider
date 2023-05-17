@@ -1,0 +1,96 @@
+html {
+  box-sizing: border-box;
+}
+*, *::after, *::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background:linear-gradient(45deg, rgb(86, 95, 151) 0%, rgb(86, 95, 151) 63%,rgb(105, 118, 165) 63%, rgb(105, 118, 165) 75%,rgb(125, 141, 179) 75%, rgb(125, 141, 179) 81%,rgb(144, 165, 193) 81%, rgb(144, 165, 193) 85%,rgb(164, 188, 207) 85%, rgb(164, 188, 207) 90%,rgb(183, 211, 221) 90%, rgb(183, 211, 221) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  perspective: 100rem;
+
+  &__cards {
+    position: relative;
+    width: 20rem;
+    height: 15rem;
+    transform-style: preserve-3d;
+    transform: translateZ(-25rem);
+    transition: transform .3s ease-in;
+  }
+  &__img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+  &__card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 2px solid #787878;
+    border-radius: .2rem;
+    font-size: 3em;
+    font-weight: 700;
+
+    &:nth-child(1) {
+      transform: rotateY(0deg) translateZ(25rem);
+    }
+    &:nth-child(2) {
+      transform: rotateY(45deg) translateZ(25rem);
+    }
+    &:nth-child(3) {
+      transform: rotateY(90deg) translateZ(25rem);
+    }
+    &:nth-child(4) {
+      transform: rotateY(135deg) translateZ(25rem);
+    }
+    &:nth-child(5) {
+      transform: rotateY(180deg) translateZ(25rem);
+    }
+    &:nth-child(6) {
+      transform: rotateY(225deg) translateZ(25rem);
+    }
+    &:nth-child(7) {
+      transform: rotateY(270deg) translateZ(25rem);
+    }
+    &:nth-child(8) {
+      transform: rotateY(315deg) translateZ(25rem);
+    }
+  }
+
+
+  &__btn {
+    outline: none;
+    border: none;
+    border-radius: .2rem;
+    background: #4716fc;
+    padding: .5em 1em;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #ccc;
+    cursor: pointer;
+    margin: 0 1rem;
+
+    &:hover {
+      transform: scale(1.04);
+      background: #5827fd;
+    }
+  }
+}
